@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdgeDecide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                local: '#0d9488',
+                edge: '#2563eb',
+                cloud: '#7c3aed',
+              },
+            },
+            transitionDuration: {
+              motion: '250ms',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #fbfbfd;
+        font-feature-settings: 'tnum';
+      }
+      input[type='range'] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+      }
+      input[type='range']::-webkit-slider-runnable-track {
+        height: 5px;
+        border-radius: 9999px;
+        background-color: #e2e8f0;
+      }
+      input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-top: -5px;
+        background-color: #0f172a;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+        transition: transform 0.1s ease;
+      }
+      input[type='range']::-webkit-slider-thumb:hover {
+        transform: scale(1.15);
+      }
+      input[type='range']::-moz-range-track {
+        height: 5px;
+        border-radius: 9999px;
+        background-color: #e2e8f0;
+      }
+      input[type='range']::-moz-range-thumb {
+        background-color: #0f172a;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+      }
+      input[type='range']:focus {
+        outline: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-slate-800 font-sans antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
